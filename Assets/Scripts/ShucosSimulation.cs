@@ -6,7 +6,8 @@ public class ShucosSimulation : MonoBehaviour
 {
     [SerializeField] private int cashierAmount = 1;
     [SerializeField] private GameObject clientPrefab;
-    [SerializeField] private double customerLambda = 100;
+    [SerializeField] private double customerLambda = 1;
+    [SerializeField] private double cachierLamda = 6;
 
     private List<Queue<Client>> cashierQueues;
     private List<int> currentQueueLengths;
@@ -74,23 +75,24 @@ public class ShucosSimulation : MonoBehaviour
         sumOfWaitTime += waitTime;
         Debug.Log($"{currentCustomer.name} waits for {FloatToHoursMinutes(waitTime)}");
         
-        yield return new WaitForSeconds((float)Exponential(6)); // Use un valor lambda apropiado
+        yield return new WaitForSeconds((float)Exponential(cachierLamda)); // Use un valor lambda apropiado
 
         if(currentCustomer.IsAttended)
         {
             double serviceEndTime = Time.time;
-            Debug.Log($"{currentCustomer.name} is done and leaves at {FloatToHoursMinutes(serviceEndTime)}");
+            currentCustomer.Attended(serviceEndTime);
+            Debug.Log($"{currentCustomer.name} is done and leaves at {FloatToHoursMinutes(currentCustomer.AttendedTime)} and waiting time {FloatToHoursMinutes(currentCustomer.diferenceTime())}");
 
             customersServedByCashier[cashierIndex]++;
             currentQueueLengths[cashierIndex]--;
 
             cashierQueue.Dequeue();
             Destroy(currentCustomer.gameObject);
+        }
 
-            if (cashierQueue.Count > 0)
-            {
-                StartCoroutine(CustomerBehavior(cashierIndex));
-            }
+        if (cashierQueue.Count > 0)
+        {
+            StartCoroutine(CustomerBehavior(cashierIndex));
         }
     }
 

@@ -55,6 +55,11 @@ public class Client : MonoBehaviour
         _attendedTime = pAttendedTime;
     }
 
+    public double diferenceTime()
+    {
+        return  _attendedTime - _arrivalTime;
+    }
+
     void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag.Equals("shuco"))

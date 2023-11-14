@@ -4265,8 +4265,8 @@ Transform:
   m_GameObject: {fileID: 3580199103614040896}
   m_LocalRotation: {x: 6.1232336e-17, y: 0.00000004371139, z: 6.123234e-17, w: 1}
   m_LocalPosition: {x: 0.079, y: 0.7037412, z: -0.05}
-  m_LocalScale: {x: 0.14, y: 0.0072264825, z: 0.21929903}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: -0.13825262, y: -0.0071362867, z: -0.2165619}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5459913179682894815}
   m_RootOrder: 11
@@ -4698,7 +4698,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4851695580461666232}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.167, y: 8.155, z: -2.322}
+  m_LocalPosition: {x: -0.033, y: 7.87, z: -2.24}
   m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -4732,9 +4732,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverPointerTexture: {fileID: 2800000, guid: d115e4a7a54c9a24f9a5efd94e828d24, type: 3}
   grabPointerTexture: {fileID: 2800000, guid: 5737ac97d99884e45be6dd1601544cf9, type: 3}
-  heightToGrab: 8.89
-  offsetX: 0.3
-  offSetZ: 1
+  heightToGrab: -2
+  offsetX: 2.3
+  offSetZ: 2.5
   colorHover: {r: 0, g: 0.5254902, b: 1, a: 0.78431374}
   hasChildren: 0
 --- !u!54 &7864316537939353595

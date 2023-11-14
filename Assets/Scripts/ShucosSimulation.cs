@@ -73,21 +73,24 @@ public class ShucosSimulation : MonoBehaviour
         double waitTime = serviceStartTime - currentCustomer.ArrivalTime;
         sumOfWaitTime += waitTime;
         Debug.Log($"{currentCustomer.name} waits for {FloatToHoursMinutes(waitTime)}");
-
+        
         yield return new WaitForSeconds((float)Exponential(6)); // Use un valor lambda apropiado
 
-        double serviceEndTime = Time.time;
-        Debug.Log($"{currentCustomer.name} is done and leaves at {FloatToHoursMinutes(serviceEndTime)}");
-
-        customersServedByCashier[cashierIndex]++;
-        currentQueueLengths[cashierIndex]--;
-
-        cashierQueue.Dequeue();
-        Destroy(currentCustomer.gameObject);
-
-        if (cashierQueue.Count > 0)
+        if(currentCustomer.IsAttended)
         {
-            StartCoroutine(CustomerBehavior(cashierIndex));
+            double serviceEndTime = Time.time;
+            Debug.Log($"{currentCustomer.name} is done and leaves at {FloatToHoursMinutes(serviceEndTime)}");
+
+            customersServedByCashier[cashierIndex]++;
+            currentQueueLengths[cashierIndex]--;
+
+            cashierQueue.Dequeue();
+            Destroy(currentCustomer.gameObject);
+
+            if (cashierQueue.Count > 0)
+            {
+                StartCoroutine(CustomerBehavior(cashierIndex));
+            }
         }
     }
 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class ElementCut : Cook
 {
     [SerializeField] private GameObject elementCut;
+    [SerializeField] private float heightInstantiate = 4f;
 
     private void OnCollisionEnter(Collision other)
     {
@@ -14,7 +15,8 @@ public class ElementCut : Cook
         {
             Destroy(this.gameObject);
             AudioManager.Play(AudioClipName.knifesharpener1);
-            Instantiate(elementCut, transform.position, transform.rotation);
+            Vector3 vector = new Vector3(transform.position.x, heightInstantiate, transform.position.z);
+            Instantiate(elementCut, vector, Quaternion.identity);
         }
     }
 }

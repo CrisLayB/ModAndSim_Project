@@ -19,14 +19,17 @@ public class ObjectHover : MonoBehaviour
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
-        renderer = GetComponent<Renderer>();
-        color = renderer.material.color;
-
+        
         if(hasChildren)
         {
             childrenList = GetComponentsInChildren<Renderer>();
             childrenColors = new Color[childrenList.Length];
             GetChildren();
+        }
+        else
+        {
+            renderer = GetComponent<Renderer>();
+            color = renderer.material.color;
         }
     }
 

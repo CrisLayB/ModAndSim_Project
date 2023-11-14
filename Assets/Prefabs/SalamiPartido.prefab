@@ -9,10 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5390095120719153755}
-  - component: {fileID: 5390095120719153752}
   - component: {fileID: 5390095120719153753}
   - component: {fileID: 5390095120719153754}
-  - component: {fileID: 8760451178446073046}
+  - component: {fileID: -8749226264725724980}
   m_Layer: 0
   m_Name: SalamiPartido
   m_TagString: salamiDone
@@ -29,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 5390095120719153756}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.032277666, y: 1.3330922, z: 0.5198}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 28, y: 28, z: 28}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5568647652668782383}
@@ -44,23 +43,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5390095120719153752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5390095120719153756}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02d61468f8b77ae4b92c344bc9a600fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  m_snapOffset: {fileID: 0}
-  m_grabPoints: []
 --- !u!65 &5390095120719153753
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -90,7 +72,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8760451178446073046
+--- !u!114 &-8749226264725724980
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,10 +81,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 5390095120719153756}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5f5a29c67268a347808d5c676e980c3, type: 3}
+  m_Script: {fileID: 11500000, guid: c690bb5c1b6b61944a9a990ac5a250e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yLimitDown: 0.401
+  hoverPointerTexture: {fileID: 0}
+  grabPointerTexture: {fileID: 0}
+  heightToGrab: 9
+  offsetX: 0
+  offSetZ: 0
+  colorHover: {r: 0.18396229, g: 0.6685207, b: 1, a: 0.70980394}
+  hasChildren: 1
 --- !u!1001 &5390095119651635508
 PrefabInstance:
   m_ObjectHideFlags: 0

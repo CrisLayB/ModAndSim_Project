@@ -513,6 +513,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 1.9999999, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &410342104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410342094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8263dac973956a549b8abffa4377a570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segundosPreparar: 10
+  materialReady: {fileID: 2100000, guid: a437f19f7e09d394e81242a295c5d484, type: 2}
+  elementCut: {fileID: 3578455935774522358, guid: e2f680df65dc02c4184df1ae3746c6a8, type: 3}
 --- !u!1 &608887972 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 62b50f08714bb40499e5b88ede22338d, type: 3}
@@ -696,6 +711,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.9999987, y: 1.9999999, z: 9.434754}
   m_Center: {x: 0.00000032782552, y: 4.338735e-30, z: 0}
+--- !u!114 &678126525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678126515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8263dac973956a549b8abffa4377a570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segundosPreparar: 10
+  materialReady: {fileID: 2100000, guid: 1d168c3c5ea88e84dac846433d2bee67, type: 2}
+  elementCut: {fileID: 5390095120719153756, guid: 9a18117d2a923064a8ee273337c1ed60, type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1828,6 +1858,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.019999994, y: 0.12514499, z: 0.019999994}
   m_Center: {x: 0.0000000013969838, y: 0, z: 0.0039071376}
+--- !u!114 &1810492074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1810492064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8263dac973956a549b8abffa4377a570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segundosPreparar: 10
+  materialReady: {fileID: 2100000, guid: 4cdaed621a6cdbd42b1ab76d80c24a00, type: 2}
+  elementCut: {fileID: 2793491455010567198, guid: da2e9f8125dc2b74fb60863f977f8773, type: 3}
 --- !u!1 &1965508696
 GameObject:
   m_ObjectHideFlags: 0
@@ -3084,8 +3129,9 @@ GameObject:
   - component: {fileID: 2703640602574142010}
   - component: {fileID: 2703640602574142009}
   - component: {fileID: 2703640602574142008}
+  - component: {fileID: 2703640602574142011}
   m_Layer: 0
-  m_Name: Salchicha.001
+  m_Name: Salchicha
   m_TagString: Selectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3139,6 +3185,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.9999988, y: 2, z: 9.434755}
   m_Center: {x: 0.00000032782555, y: -4.338735e-30, z: -1e-45}
+--- !u!114 &2703640602574142011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2703640602574142007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8263dac973956a549b8abffa4377a570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segundosPreparar: 1
+  materialReady: {fileID: 2100000, guid: 56fdbb7ee20d7eb47b14e3d6d1b4814a, type: 2}
+  elementCut: {fileID: 7662507993421526657, guid: a76ce4b511b9a2f428fc6003517dd262, type: 3}
 --- !u!23 &2735701248087390616
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4732,9 +4793,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverPointerTexture: {fileID: 2800000, guid: d115e4a7a54c9a24f9a5efd94e828d24, type: 3}
   grabPointerTexture: {fileID: 2800000, guid: 5737ac97d99884e45be6dd1601544cf9, type: 3}
-  heightToGrab: -2
-  offsetX: 2.3
-  offSetZ: 2.5
+  heightToGrab: 8.9
+  offsetX: 0.3
+  offSetZ: 1
   colorHover: {r: 0, g: 0.5254902, b: 1, a: 0.78431374}
   hasChildren: 0
 --- !u!54 &7864316537939353595

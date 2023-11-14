@@ -5,6 +5,30 @@ TagManager:
   serializedVersion: 2
   tags:
   - Selectable
+  - barbecue
+  - knife
+  - spoon
+  - ketchup
+  - mayonese
+  - mustard
+  - guacamole
+  - cabbage
+  - bread
+  - bakon
+  - salami
+  - chorizo
+  - tray
+  - plasticBag
+  - paper
+  - saugueTrigger
+  - bakonTrigger
+  - salamiTrigger
+  - chorizoTrigger
+  - saugueDone
+  - bakonDone
+  - salamiDone
+  - chorizoDone
+  - ground
   layers:
   - Default
   - TransparentFX

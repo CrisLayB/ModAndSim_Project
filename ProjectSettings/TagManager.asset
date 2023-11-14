@@ -30,6 +30,7 @@ TagManager:
   - chorizoDone
   - ground
   - saugue
+  - ready
   layers:
   - Default
   - TransparentFX

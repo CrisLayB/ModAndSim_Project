@@ -1243,10 +1243,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 479d9a1c8e1aad94bb61675875dae40e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cashierAmount: 1
+  shuqueroAmount: 1
   clientPrefab: {fileID: 2583591992500632092, guid: e581188233b85f84982fb543f6acfa1b, type: 3}
   customerLambda: 0.2
-  cachierLamda: 0.2
+  shuqueroLambda: 0.2
 --- !u!1001 &1800823814
 PrefabInstance:
   m_ObjectHideFlags: 0

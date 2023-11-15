@@ -4,30 +4,30 @@ using System.Collections.Generic;
 
 public class ShucosSimulation : MonoBehaviour
 {
-    [SerializeField] private int cashierAmount = 1;
+    [SerializeField] private int shuqueroAmount = 1;
     [SerializeField] private GameObject clientPrefab;
     [SerializeField] private double customerLambda = 1;
-    [SerializeField] private double cachierLamda = 6;
+    [SerializeField] private double shuqueroLambda = 6;
 
-    private List<Queue<Client>> cashierQueues;
+    private List<Queue<Client>> shuqueroQueues;
     private List<int> currentQueueLengths;
     private int customerAmount;
     private double sumOfWaitTime;
-    private List<int> customersServedByCashier;
+    private List<int> customersServedByShuquero;
 
     void Start()
     {
-        cashierQueues = new List<Queue<Client>>();
-        currentQueueLengths = new List<int>(new int[cashierAmount]);
+        shuqueroQueues = new List<Queue<Client>>();
+        currentQueueLengths = new List<int>(new int[shuqueroAmount]);
 
-        for (int i = 0; i < cashierAmount; i++)
+        for (int i = 0; i < shuqueroAmount; i++)
         {
-            cashierQueues.Add(new Queue<Client>());
+            shuqueroQueues.Add(new Queue<Client>());
         }
 
         customerAmount = 0;
         sumOfWaitTime = 0;
-        customersServedByCashier = new List<int>(new int[cashierAmount]);
+        customersServedByShuquero = new List<int>(new int[shuqueroAmount]);
 
         StartCoroutine(RunSimulation());
     }
@@ -57,9 +57,9 @@ public class ShucosSimulation : MonoBehaviour
         Client customer = customerObject.GetComponent<Client>();
         customer.Initialize(arrivalTime);
 
-        cashierQueues[cashierIndex].Enqueue(customer);
+        shuqueroQueues[cashierIndex].Enqueue(customer);
 
-        if (cashierQueues[cashierIndex].Count == 1)
+        if (shuqueroQueues[cashierIndex].Count == 1)
         {
             StartCoroutine(CustomerBehavior(cashierIndex));
         }
@@ -67,7 +67,7 @@ public class ShucosSimulation : MonoBehaviour
 
     IEnumerator CustomerBehavior(int cashierIndex)
     {
-        Queue<Client> cashierQueue = cashierQueues[cashierIndex];
+        Queue<Client> cashierQueue = shuqueroQueues[cashierIndex];
         Client currentCustomer = cashierQueue.Peek();
 
         double serviceStartTime = Time.time;
@@ -75,7 +75,7 @@ public class ShucosSimulation : MonoBehaviour
         sumOfWaitTime += waitTime;
         Debug.Log($"{currentCustomer.name} waits for {FloatToHoursMinutes(waitTime)}");
         
-        yield return new WaitForSeconds((float)Exponential(cachierLamda)); // Use un valor lambda apropiado
+        yield return new WaitForSeconds((float)Exponential(shuqueroLambda)); // Use un valor lambda apropiado
 
         if(currentCustomer.IsAttended)
         {
@@ -83,7 +83,7 @@ public class ShucosSimulation : MonoBehaviour
             currentCustomer.Attended(serviceEndTime);
             Debug.Log($"{currentCustomer.name} is done and leaves at {FloatToHoursMinutes(currentCustomer.AttendedTime)} and waiting time {FloatToHoursMinutes(currentCustomer.diferenceTime())}");
 
-            customersServedByCashier[cashierIndex]++;
+            customersServedByShuquero[cashierIndex]++;
             currentQueueLengths[cashierIndex]--;
 
             cashierQueue.Dequeue();
